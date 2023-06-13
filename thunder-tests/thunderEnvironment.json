@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "7539630f-a815-49b1-afcf-498810bc3862",
+    "name": "BASE_URL",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2023-06-10T16:49:58.435Z",
+    "modified": "2023-06-10T16:49:58.435Z",
+    "data": [
+      {
+        "name": "BASE_URL",
+        "value": "http://127.0.0.1:3000/api/v1/"
+      }
+    ]
+  }
+]
