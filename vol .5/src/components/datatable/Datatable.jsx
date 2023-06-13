@@ -1,16 +1,38 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns, userRows } from "../../datatablesource";
+import { OwnerColumns, OwnerRows, PlaygroundColumns, PlaygroundRows } from "../../datatablesource";
+import { userInputs, playgroundInputs } from "../../formSource";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Datatable = () => {
-  const [data, setData] = useState(userRows);
+const Datatable = (props) => {
+  const [data, setData] = useState(OwnerRows);
+  const [column, setColumn] = useState(OwnerColumns);
+  const [dataSource, setDataSource] = useState(props.dataSource);
+  const [inputSource, setInputSource] = useState(userInputs);
+
+  useEffect(() => 
+  {
+    setDataSource(props.dataSource);
+    if(dataSource == 'owners')
+    {
+      setData(OwnerRows);
+      setColumn(OwnerColumns);
+      setInputSource(userInputs);
+    }
+    else if(dataSource == 'playgrounds')
+    {
+      setData(PlaygroundRows);
+      setColumn(PlaygroundColumns);
+      setInputSource(playgroundInputs);
+    }
+  }, );
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
 
+  
   const actionColumn = [
     {
       field: "action",
@@ -19,7 +41,7 @@ const Datatable = () => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/users/test" style={{ textDecoration: "none" }}>
+            <Link to="/owners/test" style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
             <div
@@ -36,15 +58,15 @@ const Datatable = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New User
-        <Link to="/users/new" className="link">
+        Add New {dataSource} 
+        <Link to="/owners/new"  className="link">
           Add New
         </Link>
       </div>
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={userColumns.concat(actionColumn)}
+        columns={column.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection

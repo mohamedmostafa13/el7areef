@@ -28,30 +28,33 @@ const Sidebar = () => {
       <div className="center">
         <ul>
           <p className="title">MAIN</p>
-          <li>
-            <DashboardIcon className="icon" />
-            <span>Dashboard</span>
-          </li>
-          <p className="title">LISTS</p>
-          <Link to="/users" style={{ textDecoration: "none" }}>
+          <Link to="/" state={{ table: "owners" }} style={{ textDecoration: "none" }}>
+           
             <li>
-              <PersonOutlineIcon className="icon" />
-              <span>Users</span>
+              <DashboardIcon className="icon" />
+              <span>Dashboard</span>
             </li>
           </Link>
-          <Link to="/products" style={{ textDecoration: "none" }}>
+          <p className="title">LISTS</p>
+          <Link to="/owners" state={{ table: "owners" }} style={{ textDecoration: "none" }}>
+            <li>
+              <PersonOutlineIcon className="icon" />
+              <span>Owners</span>
+            </li>
+          </Link>
+          <Link to="/playgrounds" state={{ table: "playgrounds" }} style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
-              <span>Products</span>
+              <span>Playgrounds</span>
             </li>
           </Link>
           <li>
             <CreditCardIcon className="icon" />
-            <span>Orders</span>
+            <span>Reservations</span>
           </li>
           <li>
             <LocalShippingIcon className="icon" />
-            <span>Delivery</span>
+            <span>Utilities</span>
           </li>
           <p className="title">USEFUL</p>
           <li>

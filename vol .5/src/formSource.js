@@ -1,15 +1,15 @@
 export const userInputs = [
     {
       id: 1,
-      label: "Username",
+      label: "Name",
       type: "text",
-      placeholder: "john_doe",
+      placeholder: "john doe",
     },
     {
       id: 2,
-      label: "Name and surname",
+      label: "Username",
       type: "text",
-      placeholder: "John Doe",
+      placeholder: "john_doe",
     },
     {
       id: 3,
@@ -36,28 +36,28 @@ export const userInputs = [
     },
     {
       id: 7,
-      label: "Country",
+      label: "City",
       type: "text",
-      placeholder: "USA",
+      placeholder: "Cairo",
     },
   ];
   
-  export const productInputs = [
+  export const playgroundInputs = [
     {
       id: 1,
-      label: "Title",
+      label: "Name",
       type: "text",
-      placeholder: "Apple Macbook Pro",
+      placeholder: "Playground A",
     },
     {
       id: 2,
-      label: "Description",
+      label: "Address",
       type: "text",
-      placeholder: "Description",
+      placeholder: "Address",
     },
     {
       id: 3,
-      label: "Category",
+      label: "City",
       type: "text",
       placeholder: "Computers",
     },
@@ -69,9 +69,9 @@ export const userInputs = [
     },
     {
       id: 5,
-      label: "Stock",
-      type: "text",
-      placeholder: "in stock",
+      label: "Rating",
+      type: "number",
+      placeholder: "0",
     },
   ];
   
